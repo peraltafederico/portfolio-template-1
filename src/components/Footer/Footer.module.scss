@@ -1,0 +1,19 @@
+@import '../../styles/index.scss';
+
+.container {
+  display: flex;
+  min-height: 580px;
+}
+
+.contactContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+
+    img {
+        margin: 35px 0;
+        cursor: pointer;
+    }
+  }

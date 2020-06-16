@@ -1,0 +1,25 @@
+@import '../../../styles/index.scss';
+
+.container {
+  flex-basis: 60%;
+  background-color: $dark-grey-2;
+  display: flex;
+  padding: 50px 50px 20px 120px;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+.inputsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.textareaContainer {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.buttonContainer {
+    
+}

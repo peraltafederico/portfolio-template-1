@@ -1,0 +1,25 @@
+@import '../../../../styles/index.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+
+  label {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+  }
+
+  textarea {
+    background-color: $dark-grey-1;
+    border: 0;
+    height: inherit;
+    font-size: 1.5em;
+    color: $white;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
