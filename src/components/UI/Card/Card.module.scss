@@ -1,0 +1,108 @@
+@import '../../../styles/index.scss';
+
+.container {
+  background: $light-grey-2;
+  padding: 20px;
+  width: 265px;
+  height: 150px;
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.date {
+  align-self: flex-end;
+  font-size: 0.7em;
+  font-weight: 400;
+  color: $black;
+}
+
+.title {
+  font-size: 1.1em;
+  margin: 0 0 2px 0;
+}
+
+.subtitle {
+  font-size: 0.67em;
+  font-weight: 400;
+  margin: 0;
+}
+
+.description {
+  font-size: 0.7em;
+  margin-top: 12px;
+  line-height: 21px;
+  color: $black;
+}
+
+@include media-query('medium') {
+  .container {
+    width: 380px;
+    height: 180px;
+  }
+
+  .date {
+    font-size: 0.85em;
+  }
+
+  .title {
+    font-size: 1.4em;
+  }
+
+  .subtitle {
+    font-size: 0.8em;
+  }
+
+  .description {
+    font-size: 0.85em;
+    line-height: 28px;
+  }
+}
+
+@include media-query('medium') {
+  .container {
+    width: 380px;
+    height: 180px;
+  }
+
+  .date {
+    font-size: 0.85em;
+  }
+
+  .title {
+    font-size: 1.4em;
+  }
+
+  .subtitle {
+    font-size: 0.8em;
+  }
+
+  .description {
+    font-size: 0.85em;
+    line-height: 28px;
+  }
+}
+
+@include media-query('xlarge') {
+    .container {
+      width: 420px;
+      height: 220px;
+    }
+  
+    .date {
+      font-size: 1em;
+    }
+  
+    .title {
+      font-size: 1.6em;
+    }
+  
+    .subtitle {
+      font-size: 0.95em;
+    }
+  
+    .description {
+      font-size: 1em;
+      line-height: 34px;
+    }
+  }

@@ -1,0 +1,19 @@
+$breakpoints: (
+  'small': 0px,
+  'medium': 640px,
+  'large': 1024px,
+  'xlarge': 1200px,
+  'xxlarge': 1440px,
+);
+
+@mixin media-query($breakpoint) {
+  $value: map-get($breakpoints, $breakpoint);
+
+  @if $value != null {
+    @media (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint doesn't exist";
+  }
+}

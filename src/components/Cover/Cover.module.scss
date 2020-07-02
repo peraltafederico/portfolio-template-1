@@ -1,47 +1,122 @@
 @import '../../styles/index.scss';
 
-.container {
-  background-color: $black;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-  justify-content: space-between;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  font-weight: 600;
+@mixin infoContainer {
+  .infoContainer {
+    @content;
+    @media (max-height: 500px) {
+      margin-left: 20px;
+      margin-top: 50px;
 
-  & > div:first-of-type {
-    margin-left: 100px;
-    flex: 1;
-    flex-shrink: 0;
-
-    h1 {
-      font-size: 4em;
-      margin: 0;
-    }
-    h2 {
-      font-size: 2em;
-      font-weight: lighter;
-      position: relative;
+      h1 {
+        font-size: 2em;
+      }
+      h2 {
+        font-size: 1em;
+        font-weight: lighter;
+      }
     }
   }
 }
 
-.imgContainer {
-  height: 100%;
-  display: flex;
-  justify-content: flex-end;
+#cover {
+  background-size: cover;
+  // background-position: 35%;
+  background-position: 35%;
+}
 
-  img {
-    align-self: flex-end;
-    position: relative;
-    bottom: 0;
-    max-width: 70%;
-    min-width: 400px;
-    height: auto;
-    margin-right: 90px;
+.container {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  height: 400px;
+
+  .infoContainer {
+    margin-left: 15px;
+    margin-top: 80px;
+    width: 280px;
+
+    h1 {
+      font-size: 2em;
+      margin: 0;
+    }
+    h2 {
+      font-size: 0.8em;
+      font-weight: lighter;
+    }
+  }
+}
+
+@include media-query('medium') {
+  #cover {
+    background-position: 60%;
+  }
+
+  .container {
+    margin: 0 auto;
+    height: 100vh;
+
+    @include infoContainer {
+      margin-left: 30px;
+      margin-top: 150px;
+      width: 400px;
+
+      h1 {
+        font-size: 2.8em;
+        margin: 0;
+      }
+      h2 {
+        font-size: 1.3em;
+        font-weight: lighter;
+      }
+    }
+  }
+}
+
+@include media-query('large') {
+  #cover {
+    background-position: center;
+  }
+
+  .container {
+    @include infoContainer {
+      width: 500px;
+      margin-top: 150px;
+
+      h1 {
+        font-size: 3em;
+        margin: 0;
+      }
+      h2 {
+        margin-top: 30px;
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+
+@include media-query('xlarge') {
+  .container {
+    @include infoContainer {
+      width: 700px;
+
+      h1 {
+        font-size: 4em;
+        margin: 0;
+      }
+      h2 {
+        margin-top: 30px;
+        font-size: 2em;
+      }
+    }
+  }
+}
+
+@include media-query('xxlarge') {
+  .container {
+    @include infoContainer {
+      margin-left: 50px;
+      margin-top: 180px;
+      width: 750px;
+    }
   }
 }

@@ -1,5 +1,29 @@
-.content {
-  & > div:not(:last-child) {
+@import './styles/index.scss';
+
+section:not(:first-of-type) {
+  margin: 50px 0;
+}
+
+section:first-of-type {
+  margin-bottom: 50px;
+}
+
+@include media-query('medium') {
+  section:first-of-type {
+    margin-bottom: 75px;
+  }
+  
+  section:not(:first-of-type) {
+    margin: 75px 0;
+  }
+}
+
+@include media-query('large') {
+  section:first-of-type {
     margin-bottom: 100px;
+  }
+
+  section:not(:first-of-type) {
+    margin: 100px 0;
   }
 }

@@ -8,8 +8,9 @@ import project7 from '../assets/images/nature-7.jpg'
 
 export const navBarItems = ['PORTFOLIO', 'SOBRE MI', 'CONTACTO']
 export const professional = {
-  name: 'Tomas Bojorge',
-  job: 'Diseñador Industrial',
+  name: 'The Professional',
+  job:
+    'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
 }
 export const projects = [
   {
@@ -38,3 +39,44 @@ export const columns = [
   { title: 'CONTACTO', rows: ['+541150030859', 'tomas@gmail.com'] },
   { title: 'MIS REDES', rows: ['FB TW IG'] },
 ]
+
+export const career = {
+  firstColumn: {
+    title: 'Educación',
+    activities: [
+      {
+        date: 'March 2015 -  Jun 2018',
+        title: 'School',
+        subtitle: 'Lorem Impsum',
+        description:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+      },
+      {
+        date: 'March 2015 -  Jun 2018',
+        title: 'College',
+        subtitle: 'Lorem Impsum',
+        description:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+      },
+    ],
+  },
+  secondColumn: {
+    title: 'Empleos',
+    activities: [
+      {
+        date: 'March 2015 -  Jun 2018',
+        title: 'Job 1',
+        subtitle: 'Lorem Impsum',
+        description:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+      },
+      {
+        date: 'March 2015 -  Jun 2018',
+        title: 'Job 2',
+        subtitle: 'Lorem Impsum',
+        description:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+      },
+    ],
+  },
+}

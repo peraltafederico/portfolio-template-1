@@ -1,12 +1,18 @@
 import React from 'react'
 import s from './App.module.scss'
-import { Header } from './components/Header'
+
+import { navBarItems, professional, career } from './config'
+
+import { Header } from './components/UI/Header'
 import { Cover } from './components/Cover'
-import cover from './assets/images/logo.jpg'
-import { Gallery } from './components/Gallery'
-import { Footer } from './components/Footer'
-import { navBarItems, professional, projects, columns } from './config'
-import logo from './assets/images/client-logo.png'
+import { Headline } from './components/UI/Headline'
+import { Biography } from './components/Biography'
+
+import cover from './assets/images/cover_2.png'
+import worker from './assets/images/worker.png'
+import logo from './assets/images/nature-1.jpg'
+import professionalPhoto from './assets/images/professional.png'
+import { Career } from './components/Career'
 
 function App() {
   return (
@@ -17,9 +23,16 @@ function App() {
           title={professional.name}
           label={professional.job}
           cover={cover}
+          img={worker}
         />
-        <Gallery projects={projects} />
-        <Footer columns={columns} />
+        <Biography
+          bio="Lorem Ipsum is simply dummy text of the printing and  typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s"
+          img={professionalPhoto}
+        />
+        <Career
+          firstColumn={career.firstColumn}
+          secondColumn={career.secondColumn}
+        />
       </div>
     </>
   )

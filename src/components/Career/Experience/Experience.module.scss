@@ -1,0 +1,55 @@
+@import '../../../styles/index.scss';
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  position: relative;
+}
+
+.experience {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+
+@include media-query('large') {
+  .container {
+    margin: 0 20px;
+  }
+
+  .experience {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@include media-query('xlarge') {
+  .container {
+    margin: 0 40px;
+  }
+
+  .experience {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@include media-query('xxlarge') {
+  .container {
+    margin: 0 80px;
+  }
+
+  .experience {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+}

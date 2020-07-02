@@ -1,0 +1,17 @@
+@import '../../styles/index.scss';
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.experiences {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.experienceContainer {
+  margin-bottom: 15px;
+}
