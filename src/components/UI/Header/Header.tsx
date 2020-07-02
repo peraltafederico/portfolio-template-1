@@ -10,7 +10,6 @@ interface HeaderProps {
 }
 
 export const Header: FC<HeaderProps> = ({ navBarItems, logo }: HeaderProps) => {
-  const rootRef = useRef(null)
   const [hideItems, setHideItems] = useState(false)
   const [scroll, setScroll] = useState(false)
   const { width } = useDimensions()
@@ -34,7 +33,7 @@ export const Header: FC<HeaderProps> = ({ navBarItems, logo }: HeaderProps) => {
   }, [])
 
   return (
-    <div className={clsx(s.container, scroll && s.scroll)} ref={rootRef}>
+    <div className={clsx(s.container, scroll && s.scroll)}>
       <img className={s.logo} alt="Professional" src={logo} />
       {!hideItems && (
         <div className={s.itemsContainer}>
