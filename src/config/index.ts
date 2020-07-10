@@ -1,10 +1,10 @@
-import project1 from '../assets/images/nature-1.jpg'
-import project2 from '../assets/images/nature-2.jpg'
-import project3 from '../assets/images/nature-3.jpg'
-import project4 from '../assets/images/nature-4.jpg'
-import project5 from '../assets/images/nature-5.jpg'
-import project6 from '../assets/images/nature-6.jpg'
-import project7 from '../assets/images/nature-7.jpg'
+import project1 from '../assets/images/project-1.jpg'
+import project2 from '../assets/images/project-2.jpg'
+import project3 from '../assets/images/project-3.jpg'
+import project4 from '../assets/images/project-4.jpg'
+import project5 from '../assets/images/project-5.jpg'
+import project6 from '../assets/images/project-6.jpg'
+import project7 from '../assets/images/project-7.jpg'
 
 export const navBarItems = ['PORTFOLIO', 'SOBRE MI', 'CONTACTO']
 export const professional = {
@@ -12,27 +12,41 @@ export const professional = {
   job:
     'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
 }
-export const projects = [
+export const photos = [
   {
-    img: project1,
-    title: 'Lorem Impsum',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
+    src: project1,
+    width: 4,
+    height: 3,
   },
   {
-    img: project2,
-    title: 'Projecto 2',
-    description: 'Description 2',
+    src: project2,
+    width: 1,
+    height: 1,
   },
   {
-    img: project5,
-    title: 'Projecto 3',
-    description: 'Description 3',
+    src: project3,
+    width: 3,
+    height: 4,
   },
   {
-    img: project7,
-    title: 'Projecto 4',
-    description: 'Description 4',
+    src: project4,
+    width: 3,
+    height: 4,
+  },
+  {
+    src: project5,
+    width: 2,
+    height: 1,
+  },
+  {
+    src: project6,
+    width: 3,
+    height: 4,
+  },
+  {
+    src: project7,
+    width: 4,
+    height: 3,
   },
 ]
 export const columns = [

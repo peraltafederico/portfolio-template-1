@@ -3,14 +3,12 @@
 .container {
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
 }
 
 .bioContainer {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  margin: 0 5px;
 
   p {
     font-size: 0.8em;
@@ -26,8 +24,6 @@
 
 @include media-query('medium') {
   .bioContainer {
-    margin: 0 25px;
-
     p {
       font-size: 1.1em;
       line-height: 2.2em;
