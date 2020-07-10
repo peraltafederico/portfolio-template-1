@@ -5,7 +5,6 @@ import { navBarItems, professional, career } from './config'
 
 import { Header } from './components/UI/Header'
 import { Cover } from './components/Cover'
-import { Headline } from './components/UI/Headline'
 import { Biography } from './components/Biography'
 
 import cover from './assets/images/cover_2.png'
@@ -26,6 +25,7 @@ function App() {
           img={worker}
         />
         <Biography
+          title="Quién soy?"
           bio="Lorem Ipsum is simply dummy text of the printing and  typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s"
           img={professionalPhoto}
         />

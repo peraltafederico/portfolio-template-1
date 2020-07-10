@@ -84,25 +84,50 @@
 }
 
 @include media-query('xlarge') {
-    .container {
-      width: 420px;
-      height: 220px;
-    }
-  
-    .date {
-      font-size: 1em;
-    }
-  
-    .title {
-      font-size: 1.6em;
-    }
-  
-    .subtitle {
-      font-size: 0.95em;
-    }
-  
-    .description {
-      font-size: 1em;
-      line-height: 34px;
-    }
+  .container {
+    width: 420px;
+    height: 220px;
   }
+
+  .date {
+    font-size: 1em;
+  }
+
+  .title {
+    font-size: 1.6em;
+  }
+
+  .subtitle {
+    font-size: 0.95em;
+  }
+
+  .description {
+    font-size: 1em;
+    line-height: 34px;
+  }
+}
+
+@include media-query('xxlarge') {
+  .container {
+    width: 500px;
+    height: 250px;
+  }
+
+  .date {
+    font-size: 1em;
+  }
+
+  .title {
+    font-size: 1.6em;
+  }
+
+  .subtitle {
+    font-size: 0.95em;
+  }
+
+  .description {
+    font-size: 1em;
+    line-height: 38px;
+    margin-top: 20px;
+  }
+}
