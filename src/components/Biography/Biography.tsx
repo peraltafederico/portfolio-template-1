@@ -12,7 +12,9 @@ export const Biography = ({ img, bio, title }: BiographyProps) => (
   <section className={s.container}>
     <Headline title={title} />
     <div className={s.bioContainer}>
-      <img src={img} alt="Biography" />
+      <div className={s.imgContainer}>
+        <img src={img} alt="Biography" />
+      </div>
       <p>{bio}</p>
     </div>
   </section>

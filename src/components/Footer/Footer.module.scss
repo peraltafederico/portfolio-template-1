@@ -2,8 +2,8 @@
 
 .container {
   display: flex;
-  min-height: 580px;
   flex-direction: column;
+  min-height: 550px;
 }
 
 .contactContainer {
@@ -37,6 +37,10 @@
 }
 
 @include media-query('large') {
+  .container {
+    flex-direction: row;
+  }
+
   .imgContainer {
     max-width: 200px;
   }

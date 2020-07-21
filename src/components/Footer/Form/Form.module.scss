@@ -11,12 +11,12 @@
 .inputsContainer {
   display: flex;
   flex-wrap: wrap;
-  // flex: 1;
+
 }
 
 .textareaContainer {
-  // flex: 1.2;
   margin-bottom: 20px;
+  height: 150px;
 }
 
 .buttonContainer {
@@ -40,5 +40,32 @@
 
   .textareaContainer {
     margin-bottom: 25px;
+    height: 190px;
+  }
+
+  .inputsContainer {
+    & > div {
+      flex-basis: 50%;
+      box-sizing: border-box;
+    }
+    & > div:nth-child(even) {
+      padding-left: 5px;
+    }
+  
+    & > div:nth-child(odd) {
+      padding-right: 5px;
+    }
+  }
+}
+
+@include media-query('small') {
+  .inputsContainer {
+    & > div:nth-child(even) {
+      padding-left: 15px;
+    }
+  
+    & > div:nth-child(odd) {
+      padding-right: 15px;
+    }
   }
 }

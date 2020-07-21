@@ -3,10 +3,10 @@
 .container {
   background: $light-grey-2;
   padding: 20px;
-  max-width: 265px;
   box-sizing: content-box;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 .date {
@@ -35,9 +35,9 @@
 }
 
 @include media-query('small') {
-  .container {
-    max-width: 550px;
-  }
+  // .container {
+  //   max-width: 550px;
+  // }
 
   .date {
     font-size: 0.85em;
@@ -58,15 +58,15 @@
 }
 
 @include media-query('medium') {
-  .container {
-    height: 230px;
-  }
+  // .container {
+  //   height: 230px;
+  // }
 }
 
 @include media-query('large') {
-  .container {
-    height: 250px;
-  }
+  // .container {
+  //   height: 250px;
+  // }
 
   .date {
     font-size: 1em;
@@ -87,9 +87,9 @@
 }
 
 @include media-query('xlarge') {
-  .container {
-    height: 280px;
-  }
+  // .container {
+  //   height: 280px;
+  // }
 
   .description {
     font-size: 1.15em;
