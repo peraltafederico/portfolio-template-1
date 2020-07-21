@@ -7,19 +7,60 @@
   height: 100%;
 
   label {
-    margin-bottom: 20px;
-    font-size: 1.2em;
+    margin-bottom: 15px;
   }
 
   textarea {
     background-color: $light-grey-1;
     border: 0;
-    height: inherit;
-    font-size: 1.5em;
+    height: 150px;
+    font-size: 1em;
     color: $white;
+    resize: none;
+    font-family: inherit;
 
     &:focus {
       outline: none;
     }
   }
 }
+
+@include media-query('small') {
+  .container {
+
+    label {
+      font-size: 1.15em;
+      margin-bottom: 18px;
+    }
+
+    textarea {
+      height: 190px;
+      font-size: 1.1em;
+    }
+  }
+}
+
+
+// .container {
+//   display: flex;
+//   flex-direction: column;
+//   flex: 1;
+//   height: 100%;
+
+//   label {
+//     margin-bottom: 20px;
+//     font-size: 1.2em;
+//   }
+
+//   textarea {
+//     background-color: $light-grey-1;
+//     border: 0;
+//     height: inherit;
+//     font-size: 1.5em;
+//     color: $white;
+
+//     &:focus {
+//       outline: none;
+//     }
+//   }
+// }

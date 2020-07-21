@@ -12,8 +12,10 @@ body {
   h2,
   span,
   label,
-  p {
+  p,
+  input {
     color: $white;
+    letter-spacing: 1px;
   }
 }
 

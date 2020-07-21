@@ -22,7 +22,7 @@
   }
 }
 
-@include media-query('medium') {
+@include media-query('small') {
   .bioContainer {
     p {
       font-size: 1.1em;
@@ -37,7 +37,7 @@
   }
 }
 
-@include media-query('large') {
+@include media-query('medium') {
   .bioContainer {
     p {
       font-size: 1.3em;
@@ -50,7 +50,7 @@
     }
   }
 }
-@include media-query('xlarge') {
+@include media-query('large') {
   .bioContainer {
     max-width: 700px;
 

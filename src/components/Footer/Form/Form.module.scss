@@ -1,25 +1,44 @@
 @import '../../../styles/index.scss';
 
 .container {
-  flex-basis: 60%;
+  flex-basis: 1;
   background-color: $dark-grey-2;
   display: flex;
-  padding: 50px 50px 20px 120px;
-  box-sizing: border-box;
+  padding: 25px 20px;
   flex-direction: column;
 }
 
 .inputsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  // flex: 1;
 }
 
 .textareaContainer {
-    flex: 1;
-    margin-bottom: 20px;
+  // flex: 1.2;
+  margin-bottom: 20px;
 }
 
 .buttonContainer {
-    
+  margin: 0 auto;
+  width: 40%;
+}
+
+@include media-query('small') {
+  .container {
+    padding: 30px 35px;
+    flex-basis: 60%;
+    background-color: $dark-grey-2;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+  }
+
+  .buttonContainer {
+    margin: 0 auto;
+  }
+
+  .textareaContainer {
+    margin-bottom: 25px;
+  }
 }

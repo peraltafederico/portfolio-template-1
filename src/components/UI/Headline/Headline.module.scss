@@ -16,7 +16,7 @@
   }
 }
 
-@include media-query('medium') {
+@include media-query('small') {
   .container {
     height: 60px;
     margin-bottom: 35px;
@@ -27,7 +27,7 @@
   }
 }
 
-@include media-query('large') {
+@include media-query('medium') {
   .container {
     height: 65px;
     margin-bottom: 50px;
@@ -38,7 +38,7 @@
   }
 }
 
-@include media-query('xlarge') {
+@include media-query('large') {
   .container {
     height: 80px;
     margin-bottom: 55px;

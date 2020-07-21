@@ -7,9 +7,11 @@ import bh from '../../assets/images/behance-logo.png'
 export const Footer = ({ columns }: ContactPros) => (
   <div className={s.container}>
     <div className={s.contactContainer}>
-      <img src={bh} width="200" height="200" alt="BEHANCE" />
-      <Contact columns={columns} />
+      <div className={s.imgContainer}>
+        <img src={bh} alt="BEHANCE" style={{ alignContent: 'center' }} />
+      </div>
     </div>
     <Form />
+    <Contact columns={columns} />
   </div>
 )

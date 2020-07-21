@@ -6,45 +6,71 @@
   flex-direction: column;
   align-content: center;
   position: relative;
+  margin: 0 auto;
+
+
+  h2 {
+    font-size: 1em;
+  }
 }
 
 .experience {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+
 
   &:not(:last-child) {
     margin-bottom: 15px;
   }
 }
 
-@include media-query('large') {
+@include media-query('small') {
   .container {
-    margin: 0 20px;
+    h2 {
+      font-size: 1.3em;
+    }
   }
 
   .experience {
     &:not(:last-child) {
-      margin-bottom: 15px;
+      margin-bottom: 25px;
+    }
+  }
+}
+
+@include media-query('medium') {
+  .container {
+    margin: 0 20px;
+
+    h2 {
+      font-size: 1.5em;
+    }
+  }
+
+  .experience {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@include media-query('large') {
+  .container {
+    margin: 0 40px;
+
+    h2 {
+      font-size: 1.8em;
     }
   }
 }
 
 @include media-query('xlarge') {
   .container {
-    margin: 0 40px;
-  }
-
-  .experience {
-    &:not(:last-child) {
-      margin-bottom: 15px;
-    }
-  }
-}
-
-@include media-query('xxlarge') {
-  .container {
     margin: 0 50px;
+
+    h2 {
+      font-size: 2em;
+    }
   }
 
   .experience {

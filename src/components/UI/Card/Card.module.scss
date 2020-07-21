@@ -3,8 +3,7 @@
 .container {
   background: $light-grey-2;
   padding: 20px;
-  width: 265px;
-  height: 150px;
+  max-width: 265px;
   box-sizing: content-box;
   display: flex;
   flex-direction: column;
@@ -35,10 +34,9 @@
   color: $black;
 }
 
-@include media-query('medium') {
+@include media-query('small') {
   .container {
-    width: 380px;
-    height: 180px;
+    max-width: 550px;
   }
 
   .date {
@@ -61,32 +59,13 @@
 
 @include media-query('medium') {
   .container {
-    width: 380px;
-    height: 180px;
-  }
-
-  .date {
-    font-size: 0.85em;
-  }
-
-  .title {
-    font-size: 1.4em;
-  }
-
-  .subtitle {
-    font-size: 0.8em;
-  }
-
-  .description {
-    font-size: 0.85em;
-    line-height: 28px;
+    height: 230px;
   }
 }
 
-@include media-query('xlarge') {
+@include media-query('large') {
   .container {
-    width: 420px;
-    height: 220px;
+    height: 250px;
   }
 
   .date {
@@ -107,26 +86,13 @@
   }
 }
 
-@include media-query('xxlarge') {
+@include media-query('xlarge') {
   .container {
-    width: 500px;
-    height: 250px;
-  }
-
-  .date {
-    font-size: 1em;
-  }
-
-  .title {
-    font-size: 1.6em;
-  }
-
-  .subtitle {
-    font-size: 0.95em;
+    height: 280px;
   }
 
   .description {
-    font-size: 1em;
+    font-size: 1.15em;
     line-height: 38px;
     margin-top: 20px;
   }

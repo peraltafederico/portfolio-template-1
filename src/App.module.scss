@@ -8,7 +8,7 @@ section:first-of-type {
   margin-bottom: 50px;
 }
 
-@include media-query('medium') {
+@include media-query('small') {
   section:first-of-type {
     margin-bottom: 75px;
   }
@@ -18,7 +18,7 @@ section:first-of-type {
   }
 }
 
-@include media-query('large') {
+@include media-query('medium') {
   section:first-of-type {
     margin-bottom: 100px;
   }

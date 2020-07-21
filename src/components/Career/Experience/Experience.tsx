@@ -9,7 +9,7 @@ type ExperienceProps = t.Experience
 export const Experience = ({ title, activities }: ExperienceProps) => {
   return (
     <div className={s.container}>
-      <Headline title={title} />
+      <h2>{title}</h2>
       {activities.map((exp) => (
         <div key={exp.title} className={s.experience}>
           <Card

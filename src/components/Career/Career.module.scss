@@ -2,16 +2,17 @@
 
 .container {
   display: flex;
-  justify-content: center;
-}
-
-.experiences {
-  width: 100%;
-  display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .experienceContainer {
-  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@include media-query('medium') {
+  .experienceContainer {
+    flex-direction: row;
+  }
 }

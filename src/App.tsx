@@ -1,7 +1,7 @@
 import React from 'react'
 import s from './App.module.scss'
 
-import { navBarItems, professional, career, photos } from './config'
+import { navBarItems, professional, career, photos, columns } from './config'
 
 import { Header } from './components/UI/Header'
 import { Cover } from './components/Cover'
@@ -13,6 +13,7 @@ import logo from './assets/images/project-1.jpg'
 import professionalPhoto from './assets/images/professional.png'
 import { Career } from './components/Career'
 import { Portfolio } from './components/Portfolio'
+import { Footer } from './components/Footer'
 
 function App() {
   return (
@@ -33,8 +34,10 @@ function App() {
         <Career
           firstColumn={career.firstColumn}
           secondColumn={career.secondColumn}
+          title="Career"
         />
         <Portfolio photos={photos} title="Portfolio" />
+        <Footer columns={columns} />
       </div>
     </>
   )

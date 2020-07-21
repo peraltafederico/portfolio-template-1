@@ -3,14 +3,17 @@
 @mixin infoContainer {
   .infoContainer {
     @content;
+
     @media (max-height: 500px) {
       margin-left: 20px;
-      margin-top: 50px;
+      margin-top: 70px;
 
       h1 {
         font-size: 2em;
       }
       h2 {
+        // width: 280px;
+        margin-top: 10px;
         font-size: 1em;
         font-weight: lighter;
       }
@@ -20,7 +23,6 @@
 
 #cover {
   background-size: cover;
-  // background-position: 35%;
   background-position: 35%;
 }
 
@@ -46,7 +48,7 @@
   }
 }
 
-@include media-query('medium') {
+@include media-query('small') {
   #cover {
     background-position: 60%;
   }
@@ -65,18 +67,14 @@
         margin: 0;
       }
       h2 {
+        margin-top: 10px;
         font-size: 1.3em;
-        font-weight: lighter;
       }
     }
   }
 }
 
-@include media-query('large') {
-  #cover {
-    background-position: center;
-  }
-
+@include media-query('medium') {
   .container {
     @include infoContainer {
       width: 500px;
@@ -87,14 +85,17 @@
         margin: 0;
       }
       h2 {
-        margin-top: 30px;
         font-size: 1.5em;
       }
     }
   }
 }
 
-@include media-query('xlarge') {
+@include media-query('large') {
+  #cover {
+    background-position: initial;
+  }
+
   .container {
     @include infoContainer {
       width: 700px;
@@ -104,14 +105,13 @@
         margin: 0;
       }
       h2 {
-        margin-top: 30px;
         font-size: 2em;
       }
     }
   }
 }
 
-@include media-query('xxlarge') {
+@include media-query('xlarge') {
   .container {
     @include infoContainer {
       margin-left: 50px;

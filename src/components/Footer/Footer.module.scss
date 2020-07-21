@@ -3,17 +3,41 @@
 .container {
   display: flex;
   min-height: 580px;
+  flex-direction: column;
 }
 
 .contactContainer {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    justify-content: flex-end;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+}
 
-    img {
-        margin: 35px 0;
-        cursor: pointer;
-    }
+.imgContainer {
+  max-width: 140px;
+
+  img {
+    width: 100%;
+    margin-bottom: 35px;
+    cursor: pointer;
   }
+}
+
+@include media-query('small') {
+  .imgContainer {
+    max-width: 170px;
+  }
+}
+
+@include media-query('medium') {
+  .imgContainer {
+    max-width: 190px;
+  }
+}
+
+@include media-query('large') {
+  .imgContainer {
+    max-width: 200px;
+  }
+}

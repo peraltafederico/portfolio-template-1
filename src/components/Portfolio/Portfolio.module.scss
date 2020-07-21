@@ -1,10 +1,54 @@
 @import '../../styles/index.scss';
 
-.container {
-    height: 900px;
+.galleryContainer {
+  margin: 0 auto;
+  max-width: 305px;
 }
 
-.galleryContainer {
-    margin: 0 auto;
-    max-width: 800px;
+@include media-query('small') {
+  .galleryContainer {
+    max-width: 375px;
+  }
 }
+
+@include media-query('medium') {
+  .galleryContainer {
+    max-width: 750px;
+  }
+}
+
+@include media-query('large') {
+  .galleryContainer {
+    max-width: 950px;
+  }
+}
+
+@include media-query('xlarge') {
+  .galleryContainer {
+    max-width: 1200px;
+  }
+}
+
+// @include media-query('medium') {
+//   .galleryContainer {
+//     max-width: 450px;
+//   }
+// }
+
+// @include media-query('large') {
+//   .galleryContainer {
+//     max-width: 920px;
+//   }
+// }
+
+// @include media-query('xlarge') {
+//   .galleryContainer {
+//     max-width: 1030px;
+//   }
+// }
+
+// @include media-query('xxlarge') {
+//   .galleryContainer {
+//     max-width: 1230px;
+//   }
+// }
