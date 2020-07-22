@@ -5,8 +5,9 @@
     @content;
 
     @media (max-height: 500px) {
-      margin-left: 20px;
-      margin-top: 70px;
+      margin-left: 15px;
+      margin-top: 80px;
+      width: 300px;
 
       h1 {
         font-size: 2em;
@@ -93,7 +94,7 @@
 
 @include media-query('large') {
   #cover {
-    background-position: initial;
+    background-position: 50%;
   }
 
   .container {
