@@ -14,5 +14,6 @@
 @include media-query('medium') {
   .experienceContainer {
     flex-direction: row;
+    align-items: flex-start;
   }
 }

@@ -1,6 +1,6 @@
 @import './styles/index.scss';
 
-body {
+body, input, textarea {
   background-color: $dark-grey-1;
   margin: 0;
   font-family: 'Open Sans', sans-serif, -apple-system, BlinkMacSystemFont,

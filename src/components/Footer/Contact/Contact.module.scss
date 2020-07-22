@@ -40,3 +40,19 @@
     }
   }
 }
+
+@include media-query('medium') {
+  .column {
+    .title {
+      font-size: 1.6em;
+    }
+  }
+}
+
+@include media-query('xlarge') {
+  .column {
+    .title {
+      font-size: 1.8em;
+    }
+  }
+}

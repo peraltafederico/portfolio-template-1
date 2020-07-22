@@ -73,16 +73,6 @@
   }
 }
 
-@include media-query('xxlarge') {
-  .itemsContainer {
-    & > div {
-      a {
-        font-size: 1.3em;
-      }
-    }
-  }
-}
-
 .scroll {
   &::before {
     opacity: 1 !important;
