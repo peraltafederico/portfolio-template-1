@@ -16,48 +16,66 @@ export const photos = [
     src: project1,
     width: 4,
     height: 2,
+    title: 'Titulo 1',
+    text:
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
   },
   {
-    src: project1,
+    src: project2,
     width: 4,
     height: 3,
+    title: 'Titulo 2',
+    text:
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
   },
   {
-    src: project1,
+    src: project3,
     width: 4,
     height: 3,
+    title: 'Titulo 3',
+    text:
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
   },
   {
-    src: project1,
+    src: project4,
     width: 4,
     height: 3,
+    title: 'Titulo 4',
+    text:
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
   },
 
   {
-    src: project1,
+    src: project5,
     width: 4,
     height: 3,
+    title: 'Titulo 5',
+    text:
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
   },
   {
-    src: project1,
+    src: project7,
     width: 4,
     height: 3,
+    title: 'Titulo 6',
+    text:
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
   },
-  {
-    src: project1,
-    width: 4,
-    height: 3,
-  },
-  {
-    src: project1,
-    width: 4,
-    height: 3,
-  },
-  {
-    src: project1,
-    width: 4,
-    height: 3,
-  },
+  // {
+  //   src: project1,
+  //   width: 4,
+  //   height: 3,
+  // },
+  // {
+  //   src: project1,
+  //   width: 4,
+  //   height: 3,
+  // },
+  // {
+  //   src: project1,
+  //   width: 4,
+  //   height: 3,
+  // },
 ]
 export const columns = [
   { title: 'CONTACTO', rows: ['+541150030859', 'tomas@gmail.com'] },

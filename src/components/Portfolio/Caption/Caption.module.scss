@@ -1,0 +1,29 @@
+@import '../../../styles/index.scss';
+
+.container {
+  font-size: 0.85em;
+}
+
+@include media-query('small') {
+  .container {
+    font-size: 0.9em;
+  }
+}
+
+@include media-query('medium') {
+  .container {
+    font-size: 1em;
+  }
+}
+
+@include media-query('large') {
+  .container {
+    font-size: 1.1em;
+  }
+}
+
+@include media-query('xlarge') {
+  .container {
+    font-size: 1.15em;
+  }
+}
