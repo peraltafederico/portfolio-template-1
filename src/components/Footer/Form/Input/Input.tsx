@@ -2,13 +2,14 @@ import React from 'react'
 import s from './Input.module.scss'
 
 export interface InputPros {
-  label: string
   name: string
+  label: string
+  type?: string
 }
 
-export const Input = ({ label, name }: InputPros) => (
+export const Input = ({ label, name, type }: InputPros) => (
   <div className={s.container}>
     <label htmlFor={name}>{label}</label>
-    <input name={name} id={name} />
+    <input name={name} id={name} type={type} />
   </div>
 )
