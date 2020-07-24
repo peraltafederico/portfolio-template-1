@@ -1,6 +1,6 @@
 @import './styles/index.scss';
 
-section:not(:first-of-type) {
+section:not(:first-of-type):not(:last-of-type) {
   margin: 50px 0;
 }
 
@@ -8,12 +8,20 @@ section:first-of-type {
   margin-bottom: 50px;
 }
 
+section:last-of-type {
+  margin-top: 50px;
+}
+
 @include media-query('small') {
   section:first-of-type {
     margin-bottom: 75px;
   }
-  
-  section:not(:first-of-type) {
+
+  section:last-of-type {
+    margin-top: 75px;
+  }
+
+  section:not(:first-of-type):not(:last-of-type) {
     margin: 75px 0;
   }
 }
@@ -23,7 +31,11 @@ section:first-of-type {
     margin-bottom: 100px;
   }
 
-  section:not(:first-of-type) {
+  section:last-of-type {
+    margin-top: 100px;
+  }
+
+  section:not(:first-of-type):not(:last-of-type) {
     margin: 100px 0;
   }
 }

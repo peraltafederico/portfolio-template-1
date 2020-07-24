@@ -1,7 +1,14 @@
 import React from 'react'
 import s from './App.module.scss'
 
-import { navBarItems, professional, career, photos, columns } from './config'
+import {
+  navBarItems,
+  professional,
+  career,
+  photos,
+  columns,
+  behanceUrl,
+} from './config'
 
 import { Header } from './components/UI/Header'
 import { Cover } from './components/Cover'
@@ -18,7 +25,7 @@ import { Footer } from './components/Footer'
 function App() {
   return (
     <>
-      <Header navBarItems={navBarItems} logo={logo} />
+      <Header items={navBarItems} logo={logo} />
       <div className={s.content}>
         <Cover
           title={professional.name}
@@ -37,7 +44,7 @@ function App() {
           title="Career"
         />
         <Portfolio photos={photos} title="Portfolio" />
-        <Footer columns={columns} />
+        <Footer columns={columns} imgLink={behanceUrl} />
       </div>
     </>
   )

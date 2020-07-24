@@ -19,7 +19,7 @@
 
   img {
     width: 100%;
-    margin-bottom: 35px;
+    margin-bottom: 45px;
     cursor: pointer;
   }
 }
@@ -32,15 +32,17 @@
 
 @include media-query('medium') {
   .imgContainer {
-    max-width: 190px;
+    max-width: 185px;
   }
 }
 
-@include media-query('large') {
+@include media-query('xlarge') {
   .container {
     flex-direction: row;
   }
+}
 
+@media (min-width: 1200px) {
   .imgContainer {
     max-width: 200px;
   }
