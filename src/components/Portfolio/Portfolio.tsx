@@ -4,11 +4,13 @@
 import React, { useLayoutEffect, useState } from 'react'
 import Gallery from 'react-photo-gallery'
 import Lightbox from 'react-image-lightbox'
+import { Element } from 'react-scroll'
 import s from './Portfolio.module.scss'
 import { Headline } from '../UI/Headline'
 import { useDimensions } from '../../hooks/useDimensions'
 import 'react-image-lightbox/style.css'
 import { Caption } from './Caption'
+import { SectionsEnum } from '../../enums'
 
 interface Photo {
   src: string
@@ -46,35 +48,37 @@ export const Portfolio = ({ photos, title }: Props) => {
 
   return (
     <section className={s.container}>
-      <Headline title={title} />
-      <div className={s.galleryContainer}>
-        <Gallery
-          photos={photos}
-          direction="row"
-          margin={5}
-          onClick={(a, b) => onClick(b)}
-        />
-      </div>
-      <div>
-        {lightboxOpen && (
-          <Lightbox
-            mainSrc={images[imgIndex]}
-            nextSrc={images[nextImgIndex]}
-            prevSrc={images[prevImgIndex]}
-            onCloseRequest={() => setLightboxOpen(false)}
-            onMovePrevRequest={() => setImgIndex(prevImgIndex)}
-            onMoveNextRequest={() => setImgIndex(nextImgIndex)}
-            enableZoom={false}
-            wrapperClassName={s.wrapperLightbox}
-            imageCaption={
-              <Caption
-                title={photos[imgIndex].title}
-                text={photos[imgIndex].text}
-              />
-            }
+      <Element name={SectionsEnum.PORTFOLIO}>
+        <Headline title={title} />
+        <div className={s.galleryContainer}>
+          <Gallery
+            photos={photos}
+            direction="row"
+            margin={5}
+            onClick={(a, b) => onClick(b)}
           />
-        )}
-      </div>
+        </div>
+        <div>
+          {lightboxOpen && (
+            <Lightbox
+              mainSrc={images[imgIndex]}
+              nextSrc={images[nextImgIndex]}
+              prevSrc={images[prevImgIndex]}
+              onCloseRequest={() => setLightboxOpen(false)}
+              onMovePrevRequest={() => setImgIndex(prevImgIndex)}
+              onMoveNextRequest={() => setImgIndex(nextImgIndex)}
+              enableZoom={false}
+              // wrapperClassName={s.wrapperLightbox}
+              imageCaption={
+                <Caption
+                  title={photos[imgIndex].title}
+                  text={photos[imgIndex].text}
+                />
+              }
+            />
+          )}
+        </div>
+      </Element>
     </section>
   )
 }

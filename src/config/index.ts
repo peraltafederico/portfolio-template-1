@@ -4,8 +4,14 @@ import project3 from '../assets/images/project-3.jpg'
 import project4 from '../assets/images/project-4.jpg'
 import project5 from '../assets/images/project-5.jpg'
 import project7 from '../assets/images/project-7.jpg'
+import { SectionsEnum } from '../enums'
 
-export const navBarItems = ['PORTFOLIO', 'SOBRE MI', 'CONTACTO']
+export const navBarItems = [
+  { name: 'ABOUT ME', scrollTo: SectionsEnum.BIOGRAPHY },
+  { name: 'CAREER', scrollTo: SectionsEnum.CAREER },
+  { name: 'PORTOFOLIO', scrollTo: SectionsEnum.PORTFOLIO },
+  { name: 'CONTACT', scrollTo: SectionsEnum.CONTACT },
+]
 export const professional = {
   name: 'The Professional',
   job:
@@ -122,3 +128,5 @@ export const career = {
     ],
   },
 }
+
+export const behanceUrl = 'https://www.behance.net/tomasnbojorge'
