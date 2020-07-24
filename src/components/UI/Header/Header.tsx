@@ -1,18 +1,23 @@
-import React, { FC, useRef, useEffect, useState, useLayoutEffect } from 'react'
+import React, { FC, useEffect, useState, useLayoutEffect, useRef } from 'react'
 import clsx from 'clsx'
+import { Link, scroller } from 'react-scroll'
 import s from './Header.module.scss'
 import menu from '../../../assets/icons/menu.svg'
 import { useDimensions } from '../../../hooks/useDimensions'
 
 interface HeaderProps {
-  navBarItems: string[]
+  items: {
+    name: string
+    scrollTo: string
+  }[]
   logo: string
 }
 
-export const Header: FC<HeaderProps> = ({ navBarItems, logo }: HeaderProps) => {
+export const Header: FC<HeaderProps> = ({ items, logo }: HeaderProps) => {
   const [hideItems, setHideItems] = useState(false)
   const [scroll, setScroll] = useState(false)
   const { width } = useDimensions()
+  const rootRef = useRef<HTMLDivElement>(null)
 
   useLayoutEffect(() => {
     if (width <= 640) {
@@ -32,14 +37,30 @@ export const Header: FC<HeaderProps> = ({ navBarItems, logo }: HeaderProps) => {
     }
   }, [])
 
+  const onClick = (element) => {
+    const headerWidth = rootRef.current.offsetHeight
+
+    scroller.scrollTo(element, {
+      duration: 600,
+      delay: 0,
+      smooth: 'easeInOut',
+      offset: -headerWidth,
+    })
+  }
+
   return (
-    <div className={clsx(s.container, scroll && s.scroll)}>
-      <img className={s.logo} alt="Professional" src={logo} />
+    <div className={clsx(s.container, scroll && s.scroll)} ref={rootRef}>
+      <img className={s.logo} alt="professional" src={logo} />
       {!hideItems && (
         <div className={s.itemsContainer}>
-          {navBarItems.map((item) => (
-            <div key={item}>
-              <a href={`#${item}`}>{item}</a>
+          {items.map((item) => (
+            <div key={item.name}>
+              <a
+                href={`#${item.name.toLowerCase()}`}
+                onClick={() => onClick(item.scrollTo)}
+              >
+                {item.name.toUpperCase()}
+              </a>
               <div className={s.underline} />
             </div>
           ))}
