@@ -28,17 +28,38 @@ export const ContactForm: FC<Props> = ({
   errors,
   isSubmitting,
 }: Props) => {
+  console.log(errors)
   return (
     <Element name={SectionsEnum.CONTACT} className={s.container}>
       <form onSubmit={onSubmit}>
         <div className={s.inputsContainer}>
-          <Input label="NAME" name="name" onChange={onChange} />
-          <Input label="EMAIL" name="email" onChange={onChange} />
+          <Input
+            label="NAME"
+            name="name"
+            onChange={onChange}
+            hasError={!!errors.name}
+          />
+          <Input
+            label="EMAIL"
+            name="email"
+            onChange={onChange}
+            hasError={!!errors.email}
+          />
           <Input label="COMPANY" name="company" onChange={onChange} />
-          <Input label="COUNTRY" name="country" onChange={onChange} />
+          <Input
+            label="COUNTRY"
+            name="country"
+            onChange={onChange}
+            hasError={!!errors.country}
+          />
         </div>
         <div className={s.textareaContainer}>
-          <Textarea label="MESSAGE" name="message" onChange={onChange} />
+          <Textarea
+            label="MESSAGE"
+            name="message"
+            onChange={onChange}
+            hasError={!!errors.message}
+          />
         </div>
         <div className={s.buttonContainer}>
           <Button text="Enviar" type="submit" />

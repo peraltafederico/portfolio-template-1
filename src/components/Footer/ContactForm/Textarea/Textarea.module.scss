@@ -18,10 +18,18 @@
     resize: none;
     font-family: inherit;
     height: inherit;
+    transition: all ease-in-out 0.5s;
+    border: 1.5px solid transparent;
 
     &:focus {
       outline: none;
     }
+  }
+}
+
+.error {
+  textarea {
+    border: 1.5px solid $red;
   }
 }
 

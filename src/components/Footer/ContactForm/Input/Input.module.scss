@@ -14,13 +14,20 @@
   input {
     background-color: transparent;
     border: 0;
-    border-bottom: 1px solid $light-grey-1;
+    border-bottom: 1.5px solid $light-grey-1;
     font-size: 1em;
     max-height: 24px;
+    transition: all ease-in-out 0.5s;
 
     &:focus {
       outline: none;
     }
+  }
+}
+
+.error {
+  input {
+    border-bottom: 1.5px solid $red;
   }
 }
 

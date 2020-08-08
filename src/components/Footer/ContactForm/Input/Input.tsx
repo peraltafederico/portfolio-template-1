@@ -7,10 +7,17 @@ export interface InputPros {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
   name: string
   className?: string
+  hasError?: boolean
 }
 
-export const Input = ({ label, onChange, name, className }: InputPros) => (
-  <div className={clsx(s.container, className)}>
+export const Input = ({
+  label,
+  onChange,
+  name,
+  className,
+  hasError,
+}: InputPros) => (
+  <div className={clsx(s.container, className, hasError && s.error)}>
     <label htmlFor={name}>{label}</label>
     <input onChange={onChange} name={name} />
   </div>
