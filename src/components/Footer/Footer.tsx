@@ -1,15 +1,27 @@
 import React, { useState, useLayoutEffect } from 'react'
 import { Element } from 'react-scroll'
 import { Contact, ContactPros } from './Contact'
-import { Form } from './Form'
+import { ContactForm } from './ContactForm'
 import s from './Footer.module.scss'
 import bh from '../../assets/images/behance-logo.png'
 import { useDimensions } from '../../hooks/useDimensions'
 import { SectionsEnum } from '../../enums'
+import { FormValues } from '../../@types'
 
-type FooterProps = ContactPros & { imgLink: string }
+type FooterProps = ContactPros & {
+  imgLink: string
+  onChangeForm: (event: React.FormEvent<HTMLFormElement>) => void
+  onSubmitForm: any
+  formValues: FormValues
+}
 
-export const Footer = ({ columns, imgLink }: FooterProps) => {
+export const Footer = ({
+  columns,
+  imgLink,
+  onChangeForm,
+  onSubmitForm,
+  formValues,
+}: FooterProps) => {
   const [responsive, setResponsive] = useState(true)
   const { width } = useDimensions()
 
@@ -34,7 +46,11 @@ export const Footer = ({ columns, imgLink }: FooterProps) => {
           </div>
           {!responsive && <Contact columns={columns} />}
         </div>
-        <Form />
+        <ContactForm
+          values={formValues}
+          onSubmit={onSubmitForm}
+          onChange={onChangeForm}
+        />
         {responsive && <Contact columns={columns} />}
       </Element>
     </section>

@@ -3,12 +3,12 @@ import s from './Textarea.module.scss'
 
 export interface TextareaPros {
   label: string
-  name: string
+  field: any
 }
 
-export const Textarea = ({ label, name }: TextareaPros) => (
+export const Textarea = ({ label, field }: TextareaPros) => (
   <div className={s.container}>
-    <label htmlFor={name}>{label}</label>
-    <textarea name={name} id={name} />
+    <label htmlFor={field.name}>{label}</label>
+    <textarea {...field} />
   </div>
 )

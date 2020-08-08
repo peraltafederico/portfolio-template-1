@@ -1,4 +1,5 @@
 import React from 'react'
+import { useFormik } from 'formik'
 import s from './App.module.scss'
 
 import {
@@ -23,6 +24,19 @@ import { Portfolio } from './components/Portfolio'
 import { Footer } from './components/Footer'
 
 function App() {
+  const { handleSubmit, handleChange, initialValues } = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      company: '',
+      country: '',
+      message: '',
+    },
+    onSubmit(values) {
+      console.log(values)
+    },
+  })
+
   return (
     <>
       <Header items={navBarItems} logo={logo} />
@@ -44,7 +58,13 @@ function App() {
           title="Career"
         />
         <Portfolio photos={photos} title="Portfolio" />
-        <Footer columns={columns} imgLink={behanceUrl} />
+        <Footer
+          columns={columns}
+          imgLink={behanceUrl}
+          formValues={initialValues}
+          onChangeForm={handleChange}
+          onSubmitForm={handleSubmit}
+        />
       </div>
     </>
   )
