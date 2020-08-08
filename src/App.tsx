@@ -33,7 +33,13 @@ const validationSchema = Yup.object({
 })
 
 function App() {
-  const { handleSubmit, handleChange, initialValues, errors } = useFormik({
+  const {
+    handleSubmit,
+    handleChange,
+    initialValues,
+    errors,
+    isSubmitting,
+  } = useFormik({
     initialValues: {
       name: '',
       email: '',
@@ -42,9 +48,7 @@ function App() {
       message: '',
     },
     validationSchema,
-    onSubmit(values) {
-      console.log(values)
-    },
+    onSubmit(values) {},
   })
 
   return (
@@ -76,6 +80,7 @@ function App() {
           onChangeForm={handleChange}
           onSubmitForm={handleSubmit}
           formErrors={errors}
+          isSubmitting={isSubmitting}
         />
       </div>
     </>

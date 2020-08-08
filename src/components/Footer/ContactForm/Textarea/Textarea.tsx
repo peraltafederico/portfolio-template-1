@@ -3,7 +3,7 @@ import s from './Textarea.module.scss'
 
 export interface TextareaPros {
   label: string
-  onChange: any
+  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
   name: string
 }
 

@@ -1,9 +1,11 @@
 import React from 'react'
 import s from './Button.module.scss'
 
+type ButtonType = 'button' | 'submit' | 'reset'
+
 export interface ButtonPros {
   text: string
-  type?: any
+  type?: ButtonType
 }
 
 export const Button = ({ text, type = 'button' }: ButtonPros) => (

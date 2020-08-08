@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import Swiper from 'react-id-swiper'
 import './Gallery.scss'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'

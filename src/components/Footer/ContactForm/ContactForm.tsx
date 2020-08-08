@@ -1,5 +1,7 @@
 import React, { FC } from 'react'
 import { Element } from 'react-scroll'
+import { ObjectSchema } from 'yup'
+import { FormikErrors } from 'formik'
 import s from './ContactForm.module.scss'
 import { Input } from './Input'
 import { Textarea } from './Textarea'
@@ -9,18 +11,23 @@ import { SectionsEnum } from '../../../enums'
 
 interface Props {
   values: FormValues
-  onSubmit: any
-  onChange: (event: React.FormEvent<HTMLFormElement>) => void
-  validationSchema: any
-  errors: any
+  onSubmit: (event: React.FormEvent<HTMLFormElement>) => void
+  onChange: (
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
+  ) => void
+  validationSchema: ObjectSchema<FormValues>
+  errors: FormikErrors<FormValues>
+  isSubmitting: boolean
 }
 
 export const ContactForm: FC<Props> = ({
   onSubmit,
   onChange,
   errors,
+  isSubmitting,
 }: Props) => {
-  console.log(errors)
   return (
     <Element name={SectionsEnum.CONTACT} className={s.container}>
       <form onSubmit={onSubmit}>

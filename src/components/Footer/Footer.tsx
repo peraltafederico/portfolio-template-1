@@ -1,4 +1,6 @@
 import React, { useState, useLayoutEffect } from 'react'
+import { ObjectSchema } from 'yup'
+import { FormikErrors } from 'formik'
 import { Contact, ContactPros } from './Contact'
 import { ContactForm } from './ContactForm'
 import s from './Footer.module.scss'
@@ -8,11 +10,16 @@ import { FormValues } from '../../@types'
 
 type FooterProps = ContactPros & {
   imgLink: string
-  onChangeForm: (event: React.FormEvent<HTMLFormElement>) => void
-  onSubmitForm: any
+  onChangeForm: (
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
+  ) => void
+  onSubmitForm: (event: React.FormEvent<HTMLFormElement>) => void
   formValues: FormValues
-  validationSchema: any
-  formErrors: any
+  validationSchema: ObjectSchema<FormValues>
+  formErrors: FormikErrors<FormValues>
+  isSubmitting: boolean
 }
 
 export const Footer = ({
@@ -23,6 +30,7 @@ export const Footer = ({
   formValues,
   validationSchema,
   formErrors,
+  isSubmitting,
 }: FooterProps) => {
   const [responsive, setResponsive] = useState(true)
   const { width } = useDimensions()
@@ -54,6 +62,7 @@ export const Footer = ({
           onChange={onChangeForm}
           validationSchema={validationSchema}
           errors={formErrors}
+          isSubmitting={isSubmitting}
         />
         {responsive && <Contact columns={columns} />}
       </div>
