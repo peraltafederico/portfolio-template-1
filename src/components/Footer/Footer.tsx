@@ -46,7 +46,7 @@ export const Footer = ({
       <div className={s.container}>
         <div className={s.contactContainer}>
           <div className={s.imgContainer}>
-            <a href={imgLink} target="_blank" rel="noreferrer">
+            <a href={imgLink} target="_blank" rel="noopener noreferrer">
               <img
                 src={bh}
                 alt="portfolio"
