@@ -3,12 +3,13 @@ import s from './Input.module.scss'
 
 export interface InputPros {
   label: string
-  field: any
+  onChange: any
+  name: string
 }
 
-export const Input = ({ label, field }: InputPros) => (
+export const Input = ({ label, onChange, name }: InputPros) => (
   <div className={s.container}>
-    <label htmlFor={field.name}>{label}</label>
-    <input {...field} />
+    <label htmlFor={name}>{label}</label>
+    <input onChange={onChange} name={name} />
   </div>
 )

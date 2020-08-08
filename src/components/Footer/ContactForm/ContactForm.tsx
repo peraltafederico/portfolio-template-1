@@ -1,46 +1,42 @@
 import React, { FC } from 'react'
-import { Formik, Form, Field } from 'formik'
+import { Element } from 'react-scroll'
 import s from './ContactForm.module.scss'
 import { Input } from './Input'
 import { Textarea } from './Textarea'
 import { Button } from './Button'
 import { FormValues } from '../../../@types'
+import { SectionsEnum } from '../../../enums'
 
 interface Props {
   values: FormValues
   onSubmit: any
   onChange: (event: React.FormEvent<HTMLFormElement>) => void
+  validationSchema: any
+  errors: any
 }
 
 export const ContactForm: FC<Props> = ({
-  values,
   onSubmit,
   onChange,
-}: Props) => (
-  <Formik initialValues={values} onSubmit={onSubmit}>
-    <Form className={s.container} onChange={onChange}>
-      <div className={s.inputsContainer}>
-        <Field name="name" placeholder="First Name">
-          {({ field }) => <Input label="NAME" field={field} />}
-        </Field>
-        <Field name="email" placeholder="Email">
-          {({ field }) => <Input label="EMAIL" field={field} />}
-        </Field>
-        <Field name="company" placeholder="Company">
-          {({ field }) => <Input label="COMPANY" field={field} />}
-        </Field>
-        <Field name="country" placeholder="Country">
-          {({ field }) => <Input label="COUNTRY" field={field} />}
-        </Field>
-      </div>
-      <div className={s.textareaContainer}>
-        <Field name="message">
-          {({ field }) => <Textarea label="MESSAGE" field={field} />}
-        </Field>
-      </div>
-      <div className={s.buttonContainer}>
-        <Button text="Enviar" type="submit" />
-      </div>
-    </Form>
-  </Formik>
-)
+  errors,
+}: Props) => {
+  console.log(errors)
+  return (
+    <Element name={SectionsEnum.CONTACT} className={s.container}>
+      <form onSubmit={onSubmit}>
+        <div className={s.inputsContainer}>
+          <Input label="NAME" name="name" onChange={onChange} />
+          <Input label="EMAIL" name="email" onChange={onChange} />
+          <Input label="COMPANY" name="company" onChange={onChange} />
+          <Input label="COUNTRY" name="country" onChange={onChange} />
+        </div>
+        <div className={s.textareaContainer}>
+          <Textarea label="MESSAGE" name="message" onChange={onChange} />
+        </div>
+        <div className={s.buttonContainer}>
+          <Button text="Enviar" type="submit" />
+        </div>
+      </form>
+    </Element>
+  )
+}

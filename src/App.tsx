@@ -1,5 +1,6 @@
 import React from 'react'
 import { useFormik } from 'formik'
+import * as Yup from 'yup'
 import s from './App.module.scss'
 
 import {
@@ -23,8 +24,16 @@ import { Career } from './components/Career'
 import { Portfolio } from './components/Portfolio'
 import { Footer } from './components/Footer'
 
+const validationSchema = Yup.object({
+  name: Yup.string().required(),
+  email: Yup.string().required(),
+  company: Yup.string().notRequired(),
+  country: Yup.string().required(),
+  message: Yup.string().required().min(10),
+})
+
 function App() {
-  const { handleSubmit, handleChange, initialValues } = useFormik({
+  const { handleSubmit, handleChange, initialValues, errors } = useFormik({
     initialValues: {
       name: '',
       email: '',
@@ -32,6 +41,7 @@ function App() {
       country: '',
       message: '',
     },
+    validationSchema,
     onSubmit(values) {
       console.log(values)
     },
@@ -59,11 +69,13 @@ function App() {
         />
         <Portfolio photos={photos} title="Portfolio" />
         <Footer
+          validationSchema={validationSchema}
           columns={columns}
           imgLink={behanceUrl}
           formValues={initialValues}
           onChangeForm={handleChange}
           onSubmitForm={handleSubmit}
+          formErrors={errors}
         />
       </div>
     </>
