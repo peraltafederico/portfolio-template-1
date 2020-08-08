@@ -3,21 +3,21 @@
 .container {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  height: 100%;
+  margin-bottom: 20px;
+  width: 100%;
 
   label {
-    margin-bottom: 15px;
+    font-size: 1em;
+    margin-bottom: 5px;
   }
 
-  textarea {
-    background-color: $light-grey-1;
+  input {
+    background-color: transparent;
     border: 0;
+    border-bottom: 1.5px solid $light-grey-1;
     font-size: 1em;
-    color: $white;
-    resize: none;
-    font-family: inherit;
-    height: inherit;
+    max-height: 24px;
+    transition: all ease-in-out 0.5s;
 
     &:focus {
       outline: none;
@@ -25,14 +25,22 @@
   }
 }
 
+.error {
+  input {
+    border-bottom: 1.5px solid $red;
+  }
+}
+
 @include media-query('small') {
   .container {
+    margin-bottom: 25px;
+
     label {
       font-size: 1.15em;
-      margin-bottom: 20px;
+      margin-bottom: 7px;
     }
 
-    textarea {
+    input {
       font-size: 1.1em;
     }
   }
@@ -44,16 +52,19 @@
       font-size: 1.18em;
     }
 
-    textarea {
+    input {
       font-size: 1.25em;
     }
   }
 }
 
-@include media-query('large') {
+@include media-query('xlarge') {
   .container {
-    textarea {
+    margin-bottom: 30px;
+
+    input {
       font-size: 1.28em;
     }
   }
 }
+

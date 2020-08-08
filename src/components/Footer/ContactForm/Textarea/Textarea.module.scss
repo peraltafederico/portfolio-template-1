@@ -3,20 +3,23 @@
 .container {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
-  width: 100%;
+  flex: 1;
+  height: 100%;
 
   label {
-    font-size: 1em;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
   }
 
-  input {
-    background-color: transparent;
+  textarea {
+    background-color: $light-grey-1;
     border: 0;
-    border-bottom: 1px solid $light-grey-1;
     font-size: 1em;
-    max-height: 24px;
+    color: $white;
+    resize: none;
+    font-family: inherit;
+    height: inherit;
+    transition: all ease-in-out 0.5s;
+    border: 1.5px solid transparent;
 
     &:focus {
       outline: none;
@@ -24,16 +27,20 @@
   }
 }
 
+.error {
+  textarea {
+    border: 1.5px solid $red;
+  }
+}
+
 @include media-query('small') {
   .container {
-    margin-bottom: 25px;
-
     label {
       font-size: 1.15em;
-      margin-bottom: 7px;
+      margin-bottom: 20px;
     }
 
-    input {
+    textarea {
       font-size: 1.1em;
     }
   }
@@ -45,19 +52,16 @@
       font-size: 1.18em;
     }
 
-    input {
+    textarea {
       font-size: 1.25em;
     }
   }
 }
 
-@include media-query('xlarge') {
+@include media-query('large') {
   .container {
-    margin-bottom: 30px;
-
-    input {
+    textarea {
       font-size: 1.28em;
     }
   }
 }
-

@@ -1,15 +1,37 @@
 import React, { useState, useLayoutEffect } from 'react'
-import { Element } from 'react-scroll'
+import { ObjectSchema } from 'yup'
+import { FormikErrors } from 'formik'
 import { Contact, ContactPros } from './Contact'
-import { Form } from './Form'
+import { ContactForm } from './ContactForm'
 import s from './Footer.module.scss'
 import bh from '../../assets/images/behance-logo.png'
 import { useDimensions } from '../../hooks/useDimensions'
-import { SectionsEnum } from '../../enums'
+import { FormValues } from '../../@types'
 
-type FooterProps = ContactPros & { imgLink: string }
+type FooterProps = ContactPros & {
+  imgLink: string
+  onChangeForm: (
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
+  ) => void
+  onSubmitForm: (event: React.FormEvent<HTMLFormElement>) => void
+  formValues: FormValues
+  validationSchema: ObjectSchema<FormValues>
+  formErrors: FormikErrors<FormValues>
+  isSubmitting: boolean
+}
 
-export const Footer = ({ columns, imgLink }: FooterProps) => {
+export const Footer = ({
+  columns,
+  imgLink,
+  onChangeForm,
+  onSubmitForm,
+  formValues,
+  validationSchema,
+  formErrors,
+  isSubmitting,
+}: FooterProps) => {
   const [responsive, setResponsive] = useState(true)
   const { width } = useDimensions()
 
@@ -21,10 +43,10 @@ export const Footer = ({ columns, imgLink }: FooterProps) => {
 
   return (
     <section>
-      <Element name={SectionsEnum.CONTACT} className={s.container}>
+      <div className={s.container}>
         <div className={s.contactContainer}>
           <div className={s.imgContainer}>
-            <a href={imgLink} target="_blank" rel="noreferrer">
+            <a href={imgLink} target="_blank" rel="noopener noreferrer">
               <img
                 src={bh}
                 alt="portfolio"
@@ -34,9 +56,16 @@ export const Footer = ({ columns, imgLink }: FooterProps) => {
           </div>
           {!responsive && <Contact columns={columns} />}
         </div>
-        <Form />
+        <ContactForm
+          values={formValues}
+          onSubmit={onSubmitForm}
+          onChange={onChangeForm}
+          validationSchema={validationSchema}
+          errors={formErrors}
+          isSubmitting={isSubmitting}
+        />
         {responsive && <Contact columns={columns} />}
-      </Element>
+      </div>
     </section>
   )
 }

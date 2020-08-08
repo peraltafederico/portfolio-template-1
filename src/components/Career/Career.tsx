@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react'
+import React from 'react'
 import { Element } from 'react-scroll'
 import s from './Career.module.scss'
 import * as t from '../../@types'

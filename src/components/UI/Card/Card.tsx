@@ -1,6 +1,6 @@
 import React from 'react'
 import s from './Card.module.scss'
-import { Experience, Activity } from '../../../@types'
+import { Activity } from '../../../@types'
 
 type CardProps = Activity
 

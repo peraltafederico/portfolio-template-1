@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState, useLayoutEffect, useRef } from 'react'
 import clsx from 'clsx'
-import { Link, scroller } from 'react-scroll'
+import { scroller } from 'react-scroll'
 import s from './Header.module.scss'
 import menu from '../../../assets/icons/menu.svg'
 import { useDimensions } from '../../../hooks/useDimensions'

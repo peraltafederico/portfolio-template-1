@@ -1,6 +1,5 @@
 import React from 'react'
 import s from './Experience.module.scss'
-import { Headline } from '../../UI/Headline'
 import { Card } from '../../UI/Card'
 import * as t from '../../../@types/index'
 

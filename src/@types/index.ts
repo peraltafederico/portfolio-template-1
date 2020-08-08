@@ -9,3 +9,11 @@ export interface Experience {
   title: string
   activities: Activity[]
 }
+
+export interface FormValues {
+  name: string
+  email: string
+  company: string
+  country: string
+  message: string
+}
