@@ -29,7 +29,7 @@
     "react-transition-group": "^4.4.1",
     "stylelint": "^13.6.0",
     "stylelint-scss": "^3.17.2",
-    "swiper": "^5.4.2",
+    "swiper": "^6.5.1",
     "typescript": "~3.7.2",
     "yup": "^0.29.3"
   },
