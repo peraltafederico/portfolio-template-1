@@ -17,7 +17,7 @@
     "clsx": "^1.1.1",
     "eslint": "6.x.x",
     "formik": "^2.1.5",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "react": "^16.13.1",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.13.1",
